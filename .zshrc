@@ -1,3 +1,5 @@
+plugins=(git osx)
+
 alias ga='git add'
 alias gaa='git add --all'
 alias gs='git status'
