@@ -9,6 +9,9 @@ alias gp='git push'
 alias gl='git pull'
 alias mygit='cd ~/Desktop/git/'
 alias mywork='cd ~/Desktop/work/'
+alias dt='cd ~/Desktop'
+
+alias da='docker ps --all'
 
 mkcd () {
   mkdir "$1"
