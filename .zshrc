@@ -31,6 +31,12 @@ regit() {
 	git config user.email devilyoushy@gmail.com
 }
 
+# Only if proper setup of Ruby and Python. Install mdless first
+
+mark() {
+	cat README.md | mdless
+}
+
 export NVM_DIR="/Users/arturkondas/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
