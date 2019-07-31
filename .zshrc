@@ -13,6 +13,8 @@ alias dt='cd ~/Desktop'
 
 alias da='docker ps --all'
 
+alias matrix='sh /Users/arturkondas/Desktop/git/playground/gomatrix.sh'
+
 mkcd () {
   mkdir "$1"
   cd "$1"
