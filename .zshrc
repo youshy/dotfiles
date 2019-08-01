@@ -15,6 +15,8 @@ alias da='docker ps --all'
 
 alias matrix='sh /Users/arturkondas/Desktop/git/playground/gomatrix.sh'
 
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+
 mkcd () {
   mkdir "$1"
   cd "$1"
