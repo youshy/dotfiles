@@ -9,6 +9,7 @@ alias gp='git push'
 alias gl='git pull'
 alias mygit='cd ~/Desktop/git/'
 alias mywork='cd ~/Desktop/work/'
+alias mygo='cd ~/go/src'
 alias dt='cd ~/Desktop'
 
 alias da='docker ps --all'
