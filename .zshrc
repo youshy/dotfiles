@@ -12,6 +12,8 @@ alias mywork='cd ~/Desktop/work/'
 alias mygo='cd ~/go/src'
 alias dt='cd ~/Desktop'
 
+alias idea='open -a "`ls -dt /Applications/IntelliJ\ IDEA*|head -1`"'
+
 alias da='docker ps --all'
 
 alias matrix='sh /Users/arturkondas/Desktop/git/playground/gomatrix.sh'
