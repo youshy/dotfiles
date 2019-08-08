@@ -424,11 +424,15 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'luochen1990/rainbow'
 
 call plug#end()
 
 filetype plugin indent on
 set backspace=indent,eol,start
+
+" Enable the rainbow!
+let g:rainbow_active = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Go Setup
