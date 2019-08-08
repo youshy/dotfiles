@@ -423,6 +423,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"
+call plug#end()
 
 filetype plugin indent on
 set backspace=indent,eol,start
