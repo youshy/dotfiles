@@ -422,8 +422,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-"
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+
 call plug#end()
 
 filetype plugin indent on
