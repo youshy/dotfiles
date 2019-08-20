@@ -438,5 +438,6 @@ let g:rainbow_active = 1
 " => Go Setup
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" If any imports doesn't work - change to gofmt
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
