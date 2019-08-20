@@ -4,4 +4,4 @@ Nothing special, you know...
 
 ## Honorable mentions
 
-My `.vimrc` setup is based on [Amazing Amix setup](https://github.com/amix/vimrc)_
+My basic `.vimrc` setup was based on [Amazing Amix setup](https://github.com/amix/vimrc) (with many changes as of now)
