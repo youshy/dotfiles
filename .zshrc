@@ -11,6 +11,7 @@ alias mygit='cd ~/Desktop/git/'
 alias mywork='cd ~/Desktop/work/'
 alias mygo='cd ~/go/src'
 alias dt='cd ~/Desktop'
+alias du='cd ~/Downloads`
 
 alias idea='open -a "`ls -dt /Applications/IntelliJ\ IDEA*|head -1`"'
 
