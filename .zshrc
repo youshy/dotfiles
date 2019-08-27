@@ -25,17 +25,8 @@ mkcd () {
   cd "$1"
 }
 
-setgit() {
-	DIR=${PWD}
-	echo ${DIR}
-	cp /Users/arturkondas/Desktop/git/shell-playground/github-setup.sh ${DIR}
-	sh github-setup.sh
-	rm -rf github-setup.sh
-}
-
-regit() {
-	git config user.name youshy
-	git config user.email devilyoushy@gmail.com
+gu() {
+  /Users/arturkondas/go/src/github.com/gitutil/gitutil "$1" "$2" "$3"
 }
 
 # Only if proper setup of Ruby and Python. Install mdless first
