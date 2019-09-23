@@ -12,7 +12,9 @@ alias mygit='cd ~/Desktop/git/'
 alias work='cd ~/Desktop/work/'
 alias mygo='cd ~/go/src'
 alias dt='cd ~/Desktop'
-alias du='cd ~/Downloads`
+alias du='cd ~/Downloads'
+alias pg_start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
+alias pg_stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 
 alias idea='open -a "`ls -dt /Applications/IntelliJ\ IDEA*|head -1`"'
 
