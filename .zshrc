@@ -43,6 +43,10 @@ wiki () {
   /Users/arturkondas/go/src/github.com/wiki/wiki "$1"
 }
 
+nju () {
+  /Users/arturkondas/go/src/github.com/nju/nju "$1" "$2"
+}
+
 export NVM_DIR="/Users/arturkondas/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
