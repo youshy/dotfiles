@@ -56,4 +56,8 @@ prompt_context() {
   fi
 }
 
+# Edit line in vim with ctrl/cmd -e
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+
 eval $(thefuck --alias)
