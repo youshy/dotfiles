@@ -16,6 +16,8 @@ alias du='cd ~/Downloads'
 alias pg_start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 alias pg_stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 
+alias getme='pwd | pbcopy'
+
 alias idea='open -a "`ls -dt /Applications/IntelliJ\ IDEA*|head -1`"'
 
 alias da='docker ps --all'
