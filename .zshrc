@@ -15,6 +15,7 @@ alias dt='cd ~/Desktop'
 alias du='cd ~/Downloads'
 alias pg_start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 alias pg_stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
+alias pg_clean='rm /usr/local/var/postgres/postmaster.pid'
 
 alias getme='pwd | pbcopy'
 
