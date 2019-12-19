@@ -1,0 +1,37 @@
+[
+  {
+    "type": "escape",
+    "title": "ESC",
+    "width": 64,
+    "align": "left",
+    "bordered": false,
+  },
+  {
+    "type": "timeButton",
+    "formatTemplate": "HH:mm",
+    "align": "center",
+    "bordered": false,
+    "longAction": "shellScript",
+    "longExecutablePath": "/usr/bin/pmset",
+    "longShellArguments": ["sleepnow"]
+  },
+  {
+    "type": "weather",
+    "align": "center",
+    "icon_type": "images",
+    "api_key": "ca93a0bb8cdb428552660d83249e4bc9",
+    "bordered": false
+  },
+  {
+    "type": "play",
+    "align": "right",
+    "bordered": false,
+    "width": 38
+  },
+  {
+    "type": "displaySleep",
+    "width": 100,
+    "align": "right",
+    "bordered": false
+  }
+]
