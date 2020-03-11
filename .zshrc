@@ -25,7 +25,7 @@ alias da='docker ps --all'
 
 alias matrix='sh /Users/arturkondas/Desktop/git/playground/gomatrix.sh'
 
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vim='vi'
 alias redis='~/Downloads/redis-5.0.7/src/redis-server'
 
 alias ip='curl ifconfig.me'
