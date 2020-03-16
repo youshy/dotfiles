@@ -13,6 +13,7 @@ alias work='cd ~/Desktop/work/'
 alias mygo='cd ~/go/src'
 alias dt='cd ~/Desktop'
 alias du='cd ~/Downloads'
+
 alias pg_start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 alias pg_stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 alias pg_clean='rm /usr/local/var/postgres/postmaster.pid'
@@ -25,7 +26,6 @@ alias da='docker ps --all'
 
 alias matrix='sh /Users/arturkondas/Desktop/git/playground/gomatrix.sh'
 
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias redis='~/Downloads/redis-5.0.7/src/redis-server'
 
 alias ip='curl ifconfig.me'
@@ -34,6 +34,8 @@ mkcd () {
   mkdir "$1"
   cd "$1"
 }
+
+# Set below depending on your OS/GOPATH
 
 gu() {
   /Users/arturkondas/go/src/github.com/gitutil/gitutil "$1" "$2" "$3"
