@@ -18,6 +18,11 @@ alias pg_start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.p
 alias pg_stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 alias pg_clean='rm /usr/local/var/postgres/postmaster.pid'
 
+alias l='ls -la'
+alias .='cd ..'
+alias ..='cd ...'
+alias ...='cd ....'
+
 alias getme='pwd | pbcopy'
 
 alias idea='open -a "`ls -dt /Applications/IntelliJ\ IDEA*|head -1`"'
