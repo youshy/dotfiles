@@ -43,10 +43,6 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-
 " Fast saving
 nmap <leader>w :w!<cr>
 
@@ -128,7 +124,7 @@ endif
 " Add a bit extra margin to the left
 set foldcolumn=1
 
-" Disable esc key timeout
+" Disable timeout when pressing esc key
 set timeoutlen=1000 ttimeoutlen=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -143,7 +139,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+  colorscheme iceberg
 catch
 endtry
 
@@ -426,19 +422,25 @@ Plug 'vim-airline/vim-airline'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'luochen1990/rainbow'
+Plug 'cocopon/iceberg.vim'
 
 call plug#end()
+
+colo iceberg
 
 filetype plugin indent on
 set backspace=indent,eol,start
 
-" Enable the rainbow!
+" Set the rainbow!
 let g:rainbow_active = 1
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Go Setup
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" If any imports doesn't work - change to gofmt
+" Might be slow
+" If imports are fucked - gofmt
 let g:go_fmt_command = "goimports"
+let g:go_gocode_propose_source = 0
 let g:go_auto_type_info = 1
