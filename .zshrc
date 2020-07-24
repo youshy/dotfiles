@@ -1,4 +1,18 @@
-plugins=(git osx)
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
 
 alias ga='git add'
 alias gaa='git add --all'
@@ -12,65 +26,33 @@ alias mygit='cd ~/Desktop/git/'
 alias work='cd ~/Desktop/work/'
 alias mygo='cd ~/go/src'
 alias dt='cd ~/Desktop'
-alias du='cd ~/Downloads'
-
-alias pg_start='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
-alias pg_stop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
-alias pg_clean='rm /usr/local/var/postgres/postmaster.pid'
+alias dl='cd ~/Downloads'
+alias lywe='cd ~/Desktop/LyweMusic'
 
 alias l='ls -la'
-alias .='cd ..'
-alias ..='cd ...'
-alias ...='cd ....'
-
-alias getme='pwd | pbcopy'
-
-alias idea='open -a "`ls -dt /Applications/IntelliJ\ IDEA*|head -1`"'
-
-alias da='docker ps --all'
-
-alias matrix='sh /Users/arturkondas/Desktop/git/playground/gomatrix.sh'
-
-alias redis='~/Downloads/redis-5.0.7/src/redis-server'
-
-alias ip='curl ifconfig.me'
+alias ..='cd ..'
+alias ...='cd ../'
 
 mkcd () {
   mkdir "$1"
   cd "$1"
 }
 
-# Set below depending on your OS/GOPATH
-
-gu() {
-  /Users/arturkondas/go/src/github.com/gitutil/gitutil "$1" "$2" "$3"
+forgot() {
+  ~/Desktop/git/forgot/forgotten "$1"
 }
 
-# Only if proper setup of Ruby and Python. Install mdless first
-
-mark() {
-	cat README.md | mdless
-}
-
-wiki () {
-  /Users/arturkondas/go/src/github.com/wiki/wiki "$1"
-}
-
-nju () {
-  /Users/arturkondas/go/src/github.com/nju/nju "$1" "$2"
-}
-
-export NVM_DIR="/Users/arturkondas/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-prompt_context() {
-  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)🍕"
-  fi
+gprune() {
+  git fetch --prune
+  git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d
 }
 
 # Edit line in vim with ctrl/cmd -e
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
+
+# Go setup
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 eval $(thefuck --alias)
