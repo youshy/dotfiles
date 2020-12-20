@@ -56,3 +56,6 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 eval $(thefuck --alias)
+
+export VISUAL=vim
+export EDITOR="$VISUAL"

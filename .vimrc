@@ -34,6 +34,10 @@ set noswapfile    "Ditch swapfile
 
 syntax enable     "Enable syntax highlight
 
+" https://stackoverflow.com/questions/62148994/strange-character-since-last-update-42m-in-vim
+let &t_TI = ""    "Fix weird characters
+let &t_TE = ""
+
 "
 " More magic
 "
@@ -122,4 +126,4 @@ let g:go_version_warning = 0
 "
 " Coc.nvim setup
 "
-let g:coc_disable_startup_warning = 1
+" let g:coc_disable_startup_warning = 1
