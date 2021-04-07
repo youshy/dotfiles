@@ -35,6 +35,8 @@ alias redis='~/Downloads/redis-5.0.7/src/redis-server'
 
 alias ip='curl ifconfig.me'
 
+alias readmes='find . -type d -exec touch {}/README.md \;'
+
 mkcd () {
   mkdir "$1"
   cd "$1"
