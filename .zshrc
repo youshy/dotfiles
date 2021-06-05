@@ -33,6 +33,8 @@ alias l='ls -la'
 alias ..='cd ..'
 alias ...='cd ../'
 
+alias readmes='find . -type d -exec touch {}/README.md \;'
+
 mkcd () {
   mkdir "$1"
   cd "$1"
