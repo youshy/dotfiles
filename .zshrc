@@ -10,10 +10,12 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
+# No more pluggins needed
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# Git git git
 alias ga='git add'
 alias gaa='git add --all'
 alias gs='git status'
@@ -22,30 +24,30 @@ alias gc!='git commit -v --amend'
 alias gp='git push'
 alias gl='git pull'
 alias gcr='git add README.md && git commit -m "Update README.md"'
-alias mygit='cd ~/Desktop/git/'
-alias work='cd ~/Desktop/work/'
+
 alias mygo='cd ~/go/src'
+
 alias dt='cd ~/Desktop'
 alias dl='cd ~/Downloads'
-alias lywe='cd ~/Desktop/LyweMusic'
+alias mygit='cd ~/Desktop/git/'
+alias work='cd ~/Desktop/work/'
 
-alias l='ls -la'
 alias ..='cd ..'
 alias ...='cd ../'
 
+# Create readmes in each subfolder
 alias readmes='find . -type d -exec touch {}/README.md \;'
 
+# Nicer print
 alias l='ls -latr'
 
+# Create a new dir and cd into it
 mkcd () {
   mkdir "$1"
   cd "$1"
 }
 
-forgot() {
-  ~/Desktop/git/forgot/forgotten "$1"
-}
-
+# Prune dead branches
 gprune() {
   git fetch --prune
   git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d
@@ -59,6 +61,7 @@ bindkey '^e' edit-command-line
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+# https://github.com/nvbn/thefuck
 eval $(thefuck --alias)
 
 export VISUAL=vim
