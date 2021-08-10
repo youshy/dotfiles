@@ -2,6 +2,6 @@
 
 Nothing special, you know...
 
-## Honorable mentions
+## TMUX on iTerm2 startup
 
-My basic `.vimrc` setup was based on [Amazing Amix setup](https://github.com/amix/vimrc) (with many changes as of now)
+`tmux ls && read tmux_session && tmux attach -t ${tmux_session:-default} || tmux new -s ${tmux_session:-default}`
