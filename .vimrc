@@ -114,6 +114,8 @@ Plug 'luochen1990/rainbow'
 Plug 'cocopon/iceberg.vim'
 Plug 'preservim/nerdtree'
 Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-repeat'
 
 call plug#end()
 
@@ -124,6 +126,16 @@ set backspace=indent,eol,start
 
 " Set the rainbow!
 let g:rainbow_active = 1
+
+"
+" Vim-Unimpaired
+"
+nmap < [
+nmap > ]
+omap < [
+omap > ]
+xmap < [
+xmap > ]
 
 "
 " Go setup
