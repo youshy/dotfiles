@@ -1,0 +1,54 @@
+run:
+  timeout: 1m
+  tests: true
+output:
+  print-issues-lines: true
+  print-linter-name: true
+issues:
+  max-per-linter: 0
+  max-same-issues: 0
+  exclude-use-default: true
+  whole-files: true
+  exclude-rules:
+    - linters:
+        - lll
+      source: "^//go:generate ,byte"
+linters:
+  disable-all: true
+  fast: false
+  enable:
+    - deadcode
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - structcheck
+    - typecheck
+    - unused
+    - varcheck
+    - bodyclose
+    - goconst
+    - gofmt
+    - gofumpt
+    - goimports
+    - gomnd
+    - lll
+    - nestif
+    - wsl
+  linters-settings:
+    errcheck:
+      check-blank: true
+    lll:
+      line-length: 120
+      tab-width: 2
+    gofumpt:
+      extra-rules: false
+    gomnd:
+      checks:
+        - argument
+        - case
+        - condition
+        - return
+      ignored-functions:
+        - 'time.Duration'
