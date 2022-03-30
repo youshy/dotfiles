@@ -9,3 +9,7 @@ Nothing special, you know...
 ## Neovim
 
 Neovim goes to `~/.config/nvim/init.vim`
+
+## Getting fonts in
+
+Download the font you like from [here](https://www.nerdfonts.com), `mkdir ~/.fonts`, unzip there and rebuild the cache using `fc-cache -f -v` (On Ubuntu).
