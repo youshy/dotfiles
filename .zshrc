@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/arturkondas/.oh-my-zsh"
+export ZSH="/home/arturkondas/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -72,7 +72,6 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -116,7 +115,6 @@ alias work='cd ~/Desktop/work/'
 alias mygo='cd ~/go/src'
 alias dt='cd ~/Desktop'
 alias dl='cd ~/Downloads'
-alias lywe='cd ~/Desktop/LyweMusic'
 
 alias l='ls -la'
 alias ..='cd ..'
@@ -132,29 +130,28 @@ gprune() {
   git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d
 }
 
-nju() {
-  /Users/arturkondas/Desktop/git/nju/nju "$1" "$2"
-}
-
-audio() {
-  cd Builds/LinuxMakefile
-  bear -- make
-  mv compile_commands.json ../..
-  cd ../..
-}
-
 # Edit line in vim with ctrl/cmd -e
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 # Go setup
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
-eval $(thefuck --alias)
+# Goland
+alias goland="~/Downloads/GoLand-2021.3.3/bin/goland.sh"
 
-export VISUAL=vim
+# Autofix
+eval "$(thefuck --alias fok)"
+
+# Resolve proxy
+alias proxy="resolvectl dns wlp0s20f3 8.8.8.8"
+
+# Ready to join the dark side
+alias vim="nvim"
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # Let's start the ship
 eval "$(starship init zsh)"
+
