@@ -6,7 +6,7 @@
 let mapleader = ","
 
 set history=500   "Set buffer history
-" set mouse=a       "Sometimes it's good to use mouse
+set mouse=a       "Sometimes it's good to use mouse
 set number        "Show line number
 
 set ruler         "Show ruler
@@ -35,11 +35,12 @@ set nobackup      "Don't make a backup before overwriting file
 set nowritebackup "Same as above
 set noswapfile    "Ditch swapfile
 
-set colorcolumn=120 "So the code looks nice
+set colorcolumn=120 "So the code looks nice, creates a soft column
 
 syntax enable     "Enable syntax highlight
 
 command! SGB set spell spelllang=en_gb "We're in England, ey?
+set spellsuggest=best,9 "Get some suggestions
 
 " https://stackoverflow.com/questions/62148994/strange-character-since-last-update-42m-in-vim
 let &t_TI = ""    "Fix weird characters
@@ -63,6 +64,9 @@ map <C-l> <C-W>l
 
 " Fast saving
 nmap <leader>w :w!<cr>
+
+" Fast exit and save
+nmap <leader>x :x<cr>
 
 " ,ss toggles spell checking
 map <leader>ss :setlocal spell!<cr>

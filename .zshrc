@@ -120,6 +120,11 @@ alias l='ls -la'
 alias ..='cd ..'
 alias ...='cd ../'
 
+alias tf='terraform'
+alias tfrefresh='rm -rf .terraform .terraform.lock.hcl && terraform init'
+
+alias history="history -t '%F %T'"
+
 mkcd () {
   mkdir "$1"
   cd "$1"
@@ -128,6 +133,10 @@ mkcd () {
 gprune() {
   git fetch --prune
   git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d
+}
+
+dockerpurge() {
+  docker rm -f $(docker ps -q -a)
 }
 
 # Edit line in vim with ctrl/cmd -e
@@ -143,6 +152,9 @@ alias goland="~/Downloads/GoLand-2021.3.3/bin/goland.sh"
 
 # Autofix
 eval "$(thefuck --alias fok)"
+
+# Add Terraform to PATH (and everything else tbf)
+export PATH=$PATH:/home/arturkondas/bin
 
 # Resolve proxy
 alias proxy="resolvectl dns wlp0s20f3 8.8.8.8"
