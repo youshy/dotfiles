@@ -128,9 +128,9 @@ Plug 'tpope/vim-repeat'
 
 " Stuff I'm checking for Neovim
 Plug 'kyazdani42/nvim-web-devicons' "icons for shit
-Plug 'romgrk/barbar.nvim'           "switching buffers!
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'folke/which-key.nvim'
 
 call plug#end()
 
@@ -138,6 +138,12 @@ colo iceberg
 
 filetype plugin indent on
 set backspace=indent,eol,start
+
+" COC
+try
+    nmap <silent> ]c :call CocAction('diagnosticNext')<cr>
+    nmap <silent> [c :call CocAction('diagnosticPrevious')<cr>
+endtry
 
 " Set the rainbow!
 let g:rainbow_active = 1
@@ -162,81 +168,55 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Using Lua functions
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+" nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+" nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+" nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+" nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 "
-" Barbar
+" Matchit
+"
+" Used for navigating between tags
+"
 
-set termguicolors
-
-" Move to previous/next
-nnoremap <silent>    <A-,> :BufferPrevious<CR>>
-nnoremap <silent>    <A-.> :BufferNext<CR>
-" Re-order to previous/next
-nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
-nnoremap <silent>    <A->> :BufferMoveNext<CR>
-" Goto buffer in position...
-nnoremap <silent>    <A-1> :BufferGoto 1<CR>
-nnoremap <silent>    <A-2> :BufferGoto 2<CR>
-nnoremap <silent>    <A-3> :BufferGoto 3<CR>
-nnoremap <silent>    <A-4> :BufferGoto 4<CR>
-nnoremap <silent>    <A-5> :BufferGoto 5<CR>
-nnoremap <silent>    <A-6> :BufferGoto 6<CR>
-nnoremap <silent>    <A-7> :BufferGoto 7<CR>
-nnoremap <silent>    <A-8> :BufferGoto 8<CR>
-nnoremap <silent>    <A-9> :BufferLast<CR>
-" Pin/unpin buffer
-nnoremap <silent>    <A-p> :BufferPin<CR>
-" Close buffer
-nnoremap <silent>    <A-c> :BufferClose<CR>
-" Wipeout buffer
-"                          :BufferWipeout<CR>
-" Close commands
-"                          :BufferCloseAllButCurrent<CR>
-"                          :BufferCloseAllButPinned<CR>
-"                          :BufferCloseBuffersLeft<CR>
-"                          :BufferCloseBuffersRight<CR>
-" Magic buffer-picking mode>
-nnoremap <silent> <C-s>    :BufferPick<CR>
-" Sort automatically by...
-nnoremap <silent> <Tab>bb :BufferOrderByBufferNumber<CR>
-nnoremap <silent> <Tab>bd :BufferOrderByDirectory<CR>
-nnoremap <silent> <Tab>bl :BufferOrderByLanguage<CR>
-nnoremap <silent> <Tab>bw :BufferOrderByWindowNumber<CR>
-
-" Other:
-" :BarbarEnable - enables barbar (enabled by default)
-" :BarbarDisable - very bad command, should never be used
-
-" NOTE: If barbar's option dict isn't created yet, create it
-let bufferline = get(g:, 'bufferline', {})
-
-" Enable animations
-let bufferline.animation = v:true
-
-" Enable current/total tabpages indicator
-let bufferline.tabpages = v:true
-
-" Enable auto-hiding when there's a single buffer
-let bufferline.auto_hide = v:true
-
+runtime macros/matchit.vim
 
 "
 " Go setup
 "
 
 " Might be slow
-let g:go_gocode_propose_source = 0
+" let g:go_gocode_propose_source = 0
 let g:go_auto_type_info = 1
 let g:go_version_warning = 0
 let g:go_fmt_command="gopls"
 let g:go_gopls_gofumpt=1 "gofumpt-it
 
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highligh_operators = 1
+
+let g:go_def_mode="gopls"
+let g:go_info_mode="gopls"
+
+set omnifunc=syntaxcomplete#Complete
+set completeopt+=menuone,noselect,noinsert,longest
+inoremap <expr> <C-j> pumvisible() ? '<Down>' : '<C-x><C-o>'
+inoremap <expr> <C-k> pumvisible() ? '<Up>' : '<C-x><C-o>'
+
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+
+"
+" WhichKey setup
+"
+
+lua << EOF
+  require("which-key").setup {}
+EOF
+
 "
 " Coc.nvim setup
 "
 " let g:coc_disable_startup_warning = 1
-
